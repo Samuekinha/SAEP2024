@@ -1,0 +1,16 @@
+.navbar{
+    color: white;
+    background-color: #0056b3;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin-bottom: 10px;
+}
+
+.submitCadastro{
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+}
