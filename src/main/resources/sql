@@ -1,0 +1,22 @@
+CREATE TABLE usuario (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(50),
+	email VARCHAR(75)
+);
+
+DROP TABLE tarefa
+
+CREATE TABLE tarefa (
+    id SERIAL PRIMARY KEY,
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+    descricao_tarefa VARCHAR(255),
+    nome_setor VARCHAR(50),
+    prioridade VARCHAR(10),
+    data_cadastro DATE,
+    status INTEGER DEFAULT 1
+);
+
+select * from tarefa
+
+select * from usuario

@@ -54,7 +54,7 @@ public class C_Tarefa {
         return "cadastro-tarefa";
     }
 
-    @GetMapping("listar")
+    @GetMapping("/listar")
     public String listaTarefa(Model model){
 
         List<M_Tarefa> teste = r_tarefa.findAll();

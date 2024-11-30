@@ -30,10 +30,24 @@
 
 </div>
 
-<div class="container">
+<div class="container mt-5">
 
+    <h1>tetse</h1>
     <div class="row">
+        <table>
+            <thead>
 
+
+        <tr th:each="coisa : ${lista}">
+            <td th:text="${coisa.usuario}"></td>
+            <td th:text="${coisa.descricaoTarefa}"></td>
+            <td th:text="${coisa.nomeSetor}"></td>
+            <td th:text="${coisa.prioridade}"></td>
+            <td th:text="${coisa.dataCadastro}"></td>
+            <td th:text="${coisa.status}"></td>
+        </tr>
+            </thead>
+        </table>
     </div>
 
 </div>
