@@ -46,16 +46,15 @@
             </div>
             <div class="row d-flex justify-content-center mt-3">
                 <h4>Usuário:</h4>
-                <input type="text" name="tarefaUsuario" id="tarefaUsuario" autocomplete="off">
-                <select class="form-control" id="dropDownList">
+                <select class="form-control" id="dropDownList" name="tarefaUsuario">
                     <option value="0">select option</option>
-<!--                    <option th:each="option : ${options}" th:value="${option}" th:text="${option}"></option>-->
+                    <option th:each="user : ${usuarios}" th:value="${user.id}" th:text="${user.id}"></option>
                 </select>
             </div>
+
             <div class="row d-flex justify-content-center mt-3">
                 <h4>Prioridade:</h4>
-                <input type="text" name="prioridadeTarefa" id="prioridadeTarefa" autocomplete="off">
-                <select id="prioridade" name="prioridade">
+                <select id="prioridadeTarefa" name="prioridadeTarefa">
                     <option value="baixa">baixa</option>
                     <option value="media">media</option>
                     <option value="alta">alta</option>
@@ -63,7 +62,7 @@
             </div>
 
             <div class="row d-flex justify-content-center mt-3">
-                <input class="submitCadastro" id="submitCadastro" type="submit" value="Cadastro">
+                <input class="submitCadastro" id="submitCadastro" type="submit" value="Cadastrotarefa">
             </div>
 
         </div>
