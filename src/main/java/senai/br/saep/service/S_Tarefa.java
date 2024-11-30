@@ -7,6 +7,8 @@ import senai.br.saep.repository.R_Tarefa;
 import senai.br.saep.repository.R_Usuario;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Service
 public class S_Tarefa {
@@ -50,13 +52,14 @@ public class S_Tarefa {
             m_usuario.setId(usuario);
 
             M_Tarefa m_tarefa = new M_Tarefa();
-            LocalDate dataagora = LocalDate.now();
+
+            LocalDate dataAgora = LocalDate.now();
 
             m_tarefa.setDescricaoTarefa(descricao);
             m_tarefa.setNomeSetor(setor);
             m_tarefa.setUsuario(m_usuario);
             m_tarefa.setPrioridade(prioridade);
-            m_tarefa.setDataCadastro(dataagora);
+            m_tarefa.setDataCadastro(dataAgora);
 
             r_tarefa.save(m_tarefa);
 

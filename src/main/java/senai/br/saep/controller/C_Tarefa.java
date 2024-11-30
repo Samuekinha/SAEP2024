@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import senai.br.saep.model.M_Tarefa;
 import senai.br.saep.model.M_Usuario;
+import senai.br.saep.repository.R_Tarefa;
 import senai.br.saep.repository.R_Usuario;
 import senai.br.saep.service.S_Tarefa;
 
@@ -18,10 +20,12 @@ public class C_Tarefa {
 
     private static S_Tarefa s_tarefa;
     private static R_Usuario r_usuario;
+    private static R_Tarefa r_tarefa;
 
-    public C_Tarefa(S_Tarefa s_tarefa, R_Usuario r_usuario) {
+    public C_Tarefa(S_Tarefa s_tarefa, R_Usuario r_usuario, R_Tarefa r_tarefa) {
         this.s_tarefa = s_tarefa;
         this.r_usuario = r_usuario;
+        this.r_tarefa = r_tarefa;
     }
 
     @GetMapping("/cadastrar")
@@ -48,6 +52,16 @@ public class C_Tarefa {
         }
 
         return "cadastro-tarefa";
+    }
+
+    @GetMapping("listar")
+    public String listaTarefa(Model model){
+
+        List<M_Tarefa> teste = r_tarefa.findAll();
+
+        model.addAttribute("lista", teste);
+
+        return "/tela-tarefa";
     }
 
 

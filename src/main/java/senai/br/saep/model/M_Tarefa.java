@@ -1,6 +1,8 @@
 package senai.br.saep.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -26,7 +28,7 @@ public class M_Tarefa {
 
     @Column(name = "data_cadastro")
     @Temporal(TemporalType.DATE)
-    private Date dataCadastro;
+    private LocalDate dataCadastro;
 
     @Column(name = "status", columnDefinition = "integer default 1")
     private Integer status = 1;
@@ -71,11 +73,11 @@ public class M_Tarefa {
         this.prioridade = prioridade;
     }
 
-    public Date getDataCadastro() {
+    public LocalDate getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 
